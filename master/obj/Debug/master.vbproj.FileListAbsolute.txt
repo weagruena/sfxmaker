@@ -1,0 +1,11 @@
+G:\_PROJECTS\VB\SFXmaker\master\bin\Debug\SFXmaker.exe.config
+G:\_PROJECTS\VB\SFXmaker\master\bin\Debug\SFXmaker.exe
+G:\_PROJECTS\VB\SFXmaker\master\bin\Debug\SFXmaker.pdb
+G:\_PROJECTS\VB\SFXmaker\master\obj\Debug\master.vbprojResolveAssemblyReference.cache
+G:\_PROJECTS\VB\SFXmaker\master\obj\Debug\master.MainForm.resources
+G:\_PROJECTS\VB\SFXmaker\master\obj\Debug\master.vbproj.GenerateResource.Cache
+G:\_PROJECTS\VB\SFXmaker\master\obj\Debug\SFXmaker.exe
+G:\_PROJECTS\VB\SFXmaker\master\obj\Debug\SFXmaker.pdb
+G:\_PROJECTS\VB\SFXmaker\master\bin\Debug\7z.sfx
+G:\_PROJECTS\VB\SFXmaker\master\bin\Debug\7za.exe
+G:\_PROJECTS\VB\SFXmaker\master\bin\Debug\7zsd.sfx

@@ -1,0 +1,15 @@
+
+
+
+DOCUMENTATION (Source)
+=========================
+
+Project: SFXmaker
+
+Folder: g:/_PROJECTS/VB/SFXmaker/master
+
+Status: 25.11.2013
+
+-----------------------------------
+MainForm.vb	25.11.2013 10:53	﻿'
+Program.vb	25.11.2013 11:21	﻿'

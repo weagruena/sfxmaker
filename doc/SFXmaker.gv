@@ -1,0 +1,5 @@
+digraph G {
+A [label="SFXmaker", shape=box, fontsize=24, style=filled, color=limegreen]
+
+A -> B
+}
