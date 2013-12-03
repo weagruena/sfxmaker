@@ -1,3 +1,5 @@
-doc/**/*
 Drucken.pdf
 github.com.url
+*.cmd
+*.rb
+*.ini
