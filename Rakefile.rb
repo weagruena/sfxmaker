@@ -40,7 +40,7 @@ desc "Distribution"
 task :dist => [:config] do
 	Dir.mkdir("dist") if !File.exists?("dist")
 	#~ # Make distribution	
-	system("#{@zip} a -tzip ./dist/#{@proj}.zip ./master/bin/Release/*.* -r")
+	system("#{@zip} a -tzip ./dist/#{@proj}.zip.rename ./master/bin/Release/*.* -r")
 end
 
 #################### DOCUMENTATION ########################
