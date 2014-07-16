@@ -9,16 +9,24 @@
 Imports System.IO
 
 Public Partial Class MainForm
+	Dim cmd1 As String
+	Dim cmd2 As String
+	Dim cmd3 As String
 	Dim path2zip As String
 	Dim path2ext As String
 	Dim sfxtitle As String
 	Dim sfxdescr As String	
 	Dim zipname As String
+	Dim zipexe As String
 	Dim special As Boolean = False
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		zipexe = My.Settings("exe7za")
+		cmd1 = My.Settings("cmd1")
+		cmd2 = My.Settings("cmd2")
+		cmd3 = My.Settings("cmd3")
 	End Sub
 	
 	Sub Button2Click(sender As Object, e As EventArgs)
@@ -74,11 +82,12 @@ Public Partial Class MainForm
 	
 	Sub Button1Click(sender As Object, e As EventArgs)
 		Me.folderBrowserDialog1.ShowDialog
-		path2zip = Me.folderBrowserDialog1.SelectedPath
+		path2zip = Chr(34) & Me.folderBrowserDialog1.SelectedPath & Chr(34)
 		Me.textBox1.Text = path2zip
-		Dim path() As String = path2zip.Split("\")
-        Dim chunk As Integer = path.Length
-		zipname = "c:\temp\" & path(chunk - 1) & ".exe"
+'		Dim path() As String = path2zip.Split("\")
+'		Dim chunk As Integer = path.Length
+'		zipname = "c:\temp\" & path(chunk - 1) & ".exe"
+		zipname = "c:\temp\7zSFX.exe"
 		Me.textBox5.Text = zipname
 	End Sub
 	
@@ -92,11 +101,10 @@ Public Partial Class MainForm
 	End Sub
 	
 	Sub makeSFX()
-		Dim cmd1, cmd2 As String
+		Dim cmd As String
 		Dim objCFG As StreamWriter		
 		Dim zip As New System.Diagnostics.Process()
 		
-		cmd1 = "7za.exe"
 		If special Then
 			objCFG = New StreamWriter("c:\temp\config.txt")
 			objCFG.WriteLine(";!@Install@!UTF-8!")
@@ -108,23 +116,25 @@ Public Partial Class MainForm
 			objCFG.WriteLine(";!@InstallEnd@!")
 			objCFG.Close
 			objCFG = Nothing
-			cmd2 = " a c:\temp\temp.7z " & path2zip
-			zip.StartInfo.FileName = cmd1
-			zip.StartInfo.Arguments = cmd2
+			'cmd1 = " a c:\temp\temp.7z " & path2zip
+			cmd = cmd1 & path2zip
+			zip.StartInfo.FileName = zipexe
+			zip.StartInfo.Arguments = cmd
 			zip.Start()
 			zip.WaitForExit()
 			Dim path As String = Directory.GetCurrentDirectory
 			Dim sfxf As String = path & "\7zsd.sfx"
 			zip.StartInfo.FileName = "cmd.exe"
-			zip.StartInfo.Arguments = " /C copy /b " & sfxf & " + c:\temp\config.txt + c:\temp\temp.7z " & zipname
+			zip.StartInfo.Arguments = cmd3 & sfxf & " + c:\temp\config.txt + c:\temp\temp.7z " & zipname
 			zip.Start()
 			zip.WaitForExit()
 			System.IO.File.Delete("c:\temp\config.txt")
 			System.IO.File.Delete("c:\temp\temp.7z")
 		Else
-			cmd2 = " a -sfx7z.sfx " & zipname & " " & path2zip
-			zip.StartInfo.FileName = cmd1
-			zip.StartInfo.Arguments = cmd2
+			'cmd2 = " a -sfx7z.sfx " & zipname & " " & path2zip
+			cmd = cmd2 & zipname & " " & path2zip
+			zip.StartInfo.FileName = zipexe
+			zip.StartInfo.Arguments = cmd
 			zip.Start()
 			zip.WaitForExit()
 		End If	

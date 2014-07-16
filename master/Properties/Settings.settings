@@ -1,4 +1,20 @@
-﻿<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="True">
-	<Profiles />
-	<Settings />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsFile CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true" xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings>
+    <Setting Name="cmd1" Type="System.String" Scope="User" Roaming="false">
+      <Value Profile="(Default)"> a c:\temp\temp.7z </Value>
+    </Setting>
+    <Setting Name="cmd2" Type="System.String" Scope="User" Roaming="false">
+      <Value Profile="(Default)"> a -sfx7z.sfx </Value>
+    </Setting>
+    <Setting Name="cmd3" Type="System.String" Scope="User" Roaming="false">
+      <Value Profile="(Default)"> /C copy /b </Value>
+    </Setting>
+    <Setting Name="exe7za" Type="System.String" Scope="User" Roaming="false">
+      <Value Profile="(Default)">7za.exe</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
