@@ -8,8 +8,8 @@ Project: SFXmaker
 
 Folder: g:/_PROJECTS/VB/SFXmaker/master
 
-Status: 16.07.2014
+Status: 27.10.2016
 
 -----------------------------------
-MainForm.vb	16.07.2014 15:49	﻿'
+MainForm.vb	27.10.2016 10:27	﻿'
 Program.vb	25.11.2013 10:21	﻿'

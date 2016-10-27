@@ -51,6 +51,9 @@ Partial Class MainForm
 		Me.label5 = New System.Windows.Forms.Label()
 		Me.groupBox1 = New System.Windows.Forms.GroupBox()
 		Me.button4 = New System.Windows.Forms.Button()
+		Me.checkBox2 = New System.Windows.Forms.CheckBox()
+		Me.checkBox3 = New System.Windows.Forms.CheckBox()
+		Me.openFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.groupBox1.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -58,8 +61,8 @@ Partial Class MainForm
 		'
 		Me.textBox1.Enabled = false
 		Me.textBox1.Font = New System.Drawing.Font("Arial", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.textBox1.Location = New System.Drawing.Point(14, 26)
-		Me.textBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.textBox1.Location = New System.Drawing.Point(11, 63)
+		Me.textBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.textBox1.Name = "textBox1"
 		Me.textBox1.Size = New System.Drawing.Size(279, 21)
 		Me.textBox1.TabIndex = 0
@@ -68,8 +71,8 @@ Partial Class MainForm
 		'
 		Me.button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 		Me.button1.Image = CType(resources.GetObject("button1.Image"),System.Drawing.Image)
-		Me.button1.Location = New System.Drawing.Point(312, 11)
-		Me.button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.button1.Location = New System.Drawing.Point(309, 48)
+		Me.button1.Margin = New System.Windows.Forms.Padding(2)
 		Me.button1.Name = "button1"
 		Me.button1.Size = New System.Drawing.Size(41, 36)
 		Me.button1.TabIndex = 1
@@ -79,8 +82,8 @@ Partial Class MainForm
 		'button2
 		'
 		Me.button2.Image = CType(resources.GetObject("button2.Image"),System.Drawing.Image)
-		Me.button2.Location = New System.Drawing.Point(312, 55)
-		Me.button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.button2.Location = New System.Drawing.Point(309, 92)
+		Me.button2.Margin = New System.Windows.Forms.Padding(2)
 		Me.button2.Name = "button2"
 		Me.button2.Size = New System.Drawing.Size(41, 36)
 		Me.button2.TabIndex = 2
@@ -89,8 +92,8 @@ Partial Class MainForm
 		'
 		'checkBox1
 		'
-		Me.checkBox1.Location = New System.Drawing.Point(14, 102)
-		Me.checkBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.checkBox1.Location = New System.Drawing.Point(11, 139)
+		Me.checkBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.checkBox1.Name = "checkBox1"
 		Me.checkBox1.Size = New System.Drawing.Size(135, 20)
 		Me.checkBox1.TabIndex = 3
@@ -102,7 +105,7 @@ Partial Class MainForm
 		'
 		Me.textBox2.Enabled = false
 		Me.textBox2.Location = New System.Drawing.Point(105, 25)
-		Me.textBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.textBox2.Margin = New System.Windows.Forms.Padding(2)
 		Me.textBox2.Name = "textBox2"
 		Me.textBox2.Size = New System.Drawing.Size(234, 19)
 		Me.textBox2.TabIndex = 4
@@ -110,8 +113,8 @@ Partial Class MainForm
 		'textBox3
 		'
 		Me.textBox3.Enabled = false
-		Me.textBox3.Location = New System.Drawing.Point(105, 59)
-		Me.textBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.textBox3.Location = New System.Drawing.Point(104, 59)
+		Me.textBox3.Margin = New System.Windows.Forms.Padding(2)
 		Me.textBox3.Multiline = true
 		Me.textBox3.Name = "textBox3"
 		Me.textBox3.Size = New System.Drawing.Size(235, 47)
@@ -121,7 +124,7 @@ Partial Class MainForm
 		'
 		Me.textBox4.Enabled = false
 		Me.textBox4.Location = New System.Drawing.Point(15, 137)
-		Me.textBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.textBox4.Margin = New System.Windows.Forms.Padding(2)
 		Me.textBox4.Name = "textBox4"
 		Me.textBox4.Size = New System.Drawing.Size(250, 19)
 		Me.textBox4.TabIndex = 6
@@ -132,7 +135,7 @@ Partial Class MainForm
 		Me.button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 		Me.button3.Image = CType(resources.GetObject("button3.Image"),System.Drawing.Image)
 		Me.button3.Location = New System.Drawing.Point(298, 120)
-		Me.button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.button3.Margin = New System.Windows.Forms.Padding(2)
 		Me.button3.Name = "button3"
 		Me.button3.Size = New System.Drawing.Size(41, 36)
 		Me.button3.TabIndex = 7
@@ -147,24 +150,25 @@ Partial Class MainForm
 		'textBox5
 		'
 		Me.textBox5.Font = New System.Drawing.Font("Arial", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.textBox5.Location = New System.Drawing.Point(104, 55)
-		Me.textBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.textBox5.Location = New System.Drawing.Point(101, 92)
+		Me.textBox5.Margin = New System.Windows.Forms.Padding(2)
 		Me.textBox5.Name = "textBox5"
 		Me.textBox5.Size = New System.Drawing.Size(189, 21)
 		Me.textBox5.TabIndex = 8
 		'
 		'label1
 		'
-		Me.label1.Location = New System.Drawing.Point(14, 6)
+		Me.label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		Me.label1.Location = New System.Drawing.Point(11, 43)
 		Me.label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.label1.Name = "label1"
 		Me.label1.Size = New System.Drawing.Size(182, 17)
 		Me.label1.TabIndex = 9
-		Me.label1.Text = "Folder / directory to ZIP"
+		Me.label1.Text = "File to ZIP"
 		'
 		'label2
 		'
-		Me.label2.Location = New System.Drawing.Point(14, 58)
+		Me.label2.Location = New System.Drawing.Point(11, 95)
 		Me.label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 		Me.label2.Name = "label2"
 		Me.label2.Size = New System.Drawing.Size(89, 21)
@@ -212,10 +216,10 @@ Partial Class MainForm
 		Me.groupBox1.Enabled = false
 		Me.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System
 		Me.groupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.groupBox1.Location = New System.Drawing.Point(14, 126)
-		Me.groupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.groupBox1.Location = New System.Drawing.Point(11, 163)
+		Me.groupBox1.Margin = New System.Windows.Forms.Padding(2)
 		Me.groupBox1.Name = "groupBox1"
-		Me.groupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.groupBox1.Padding = New System.Windows.Forms.Padding(2)
 		Me.groupBox1.Size = New System.Drawing.Size(356, 209)
 		Me.groupBox1.TabIndex = 14
 		Me.groupBox1.TabStop = false
@@ -224,19 +228,56 @@ Partial Class MainForm
 		'
 		Me.button4.Image = CType(resources.GetObject("button4.Image"),System.Drawing.Image)
 		Me.button4.Location = New System.Drawing.Point(298, 160)
-		Me.button4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.button4.Margin = New System.Windows.Forms.Padding(2)
 		Me.button4.Name = "button4"
 		Me.button4.Size = New System.Drawing.Size(41, 36)
 		Me.button4.TabIndex = 15
 		Me.button4.UseVisualStyleBackColor = true
 		AddHandler Me.button4.Click, AddressOf Me.Button4Click
 		'
+		'checkBox2
+		'
+		Me.checkBox2.Appearance = System.Windows.Forms.Appearance.Button
+		Me.checkBox2.Checked = true
+		Me.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked
+		Me.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.checkBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		Me.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.checkBox2.Location = New System.Drawing.Point(11, 12)
+		Me.checkBox2.Name = "checkBox2"
+		Me.checkBox2.Size = New System.Drawing.Size(89, 24)
+		Me.checkBox2.TabIndex = 15
+		Me.checkBox2.Text = "FILE"
+		Me.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.checkBox2.UseVisualStyleBackColor = true
+		AddHandler Me.checkBox2.Click, AddressOf Me.CheckBox2Click
+		'
+		'checkBox3
+		'
+		Me.checkBox3.Appearance = System.Windows.Forms.Appearance.Button
+		Me.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.checkBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		Me.checkBox3.Location = New System.Drawing.Point(101, 12)
+		Me.checkBox3.Name = "checkBox3"
+		Me.checkBox3.Size = New System.Drawing.Size(104, 24)
+		Me.checkBox3.TabIndex = 16
+		Me.checkBox3.Text = "FOLDER"
+		Me.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		Me.checkBox3.UseVisualStyleBackColor = true
+		AddHandler Me.checkBox3.Click, AddressOf Me.CheckBox3Click
+		'
+		'openFileDialog1
+		'
+		Me.openFileDialog1.FileName = "openFileDialog1"
+		'
 		'MainForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.Color.LightGreen
-		Me.ClientSize = New System.Drawing.Size(385, 355)
+		Me.ClientSize = New System.Drawing.Size(382, 389)
+		Me.Controls.Add(Me.checkBox3)
+		Me.Controls.Add(Me.checkBox2)
 		Me.Controls.Add(Me.checkBox1)
 		Me.Controls.Add(Me.groupBox1)
 		Me.Controls.Add(Me.label2)
@@ -247,12 +288,15 @@ Partial Class MainForm
 		Me.Controls.Add(Me.textBox1)
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.Name = "MainForm"
-		Me.Text = "SFXmaker (7zip)"
+		Me.Text = "SFXmaker (7zip) © 2016 mcwea"
 		Me.groupBox1.ResumeLayout(false)
 		Me.groupBox1.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private openFileDialog1 As System.Windows.Forms.OpenFileDialog
+	Private checkBox3 As System.Windows.Forms.CheckBox
+	Private checkBox2 As System.Windows.Forms.CheckBox
 	Private button4 As System.Windows.Forms.Button
 	Private groupBox1 As System.Windows.Forms.GroupBox
 	Private label5 As System.Windows.Forms.Label

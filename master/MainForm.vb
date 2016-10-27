@@ -32,6 +32,7 @@ Public Partial Class MainForm
 	Sub Button2Click(sender As Object, e As EventArgs)
 		Dim res As DialogResult
 		Dim msg As String
+		zipname = Me.textBox5.Text
 		msg = "Folder to zip:" & vbTab & path2zip & vbCrLf & "Archive / SFX:" & vbTab & zipname & vbCrLf
 		res = MessageBox.Show(msg, "SFXmaker", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
 		If res = DialogResult.OK Then
@@ -41,7 +42,8 @@ Public Partial Class MainForm
 	
 	Sub Button4Click(sender As Object, e As EventArgs)
 		Dim res As DialogResult
-		Dim msg As String
+		Dim msg As String		
+		zipname = Me.textBox5.Text
 		msg = "Folder to zip:" & vbTab & path2zip & vbCrLf & "Archive / SFX:" & vbTab & zipname & vbCrLf
 		If special Then		
 			If path2ext Is Nothing Then
@@ -81,13 +83,25 @@ Public Partial Class MainForm
 	End Sub
 	
 	Sub Button1Click(sender As Object, e As EventArgs)
-		Me.folderBrowserDialog1.ShowDialog
-		path2zip = Chr(34) & Me.folderBrowserDialog1.SelectedPath & Chr(34)
-		Me.textBox1.Text = path2zip
-'		Dim path() As String = path2zip.Split("\")
-'		Dim chunk As Integer = path.Length
-'		zipname = "c:\temp\" & path(chunk - 1) & ".exe"
-		zipname = "c:\temp\7zSFX.exe"
+		Dim path() As String
+		If Me.checkBox2.Checked Then			
+			Me.openFileDialog1.ShowDialog
+			path2zip = Chr(34) & Me.openFileDialog1.FileName & Chr(34)			
+			Me.textBox1.Text = path2zip			
+			Dim fname As New FileInfo(Me.openFileDialog1.FileName) 
+			Dim zname As String = fname.Name.Replace(" ", "_")
+			zipname = "c:\temp\" & zname & ".exe"
+			
+		ElseIf Me.checkBox3.Checked Then
+			
+			Me.folderBrowserDialog1.ShowDialog
+			path2zip = Chr(34) & Me.folderBrowserDialog1.SelectedPath & Chr(34)
+			Me.textBox1.Text = path2zip
+			path = Me.folderBrowserDialog1.SelectedPath.Split("\")
+			Dim chunk As Integer = path.Length
+			zipname = "c:\temp\" & path(chunk - 1) & ".exe"
+				
+		End If
 		Me.textBox5.Text = zipname
 	End Sub
 	
@@ -140,6 +154,18 @@ Public Partial Class MainForm
 		End If	
 		MessageBox.Show("Archive (SFX) created: " & zipname , "SFXmaker", MessageBoxButtons.OK, MessageBoxIcon.Information)
 		System.Environment.Exit(0)
+	End Sub
+		
+	Sub CheckBox2Click(sender As Object, e As EventArgs)
+		Me.checkBox3.Checked = False
+		Me.checkBox2.Checked = True
+		Me.label1.Text = "File to ZIP"
+	End Sub
+	
+	Sub CheckBox3Click(sender As Object, e As EventArgs)
+		Me.checkBox2.Checked = False
+		Me.checkBox3.Checked = True
+		Me.label1.Text = "Folder to ZIP"
 	End Sub
 	
 End Class
